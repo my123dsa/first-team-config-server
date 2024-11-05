@@ -25,12 +25,17 @@ spring:
           predicates:
             - Path=/finance/**
           filters:
+        - id: user-login-service
+          uri: lb://User
+          predicates:
+            - Path=/user/login
+          filters:
+            - name: APILoginFilter
         - id: User-service
           uri: lb://User
           predicates:
             - Path=/user/**
           filters:
-            - name: APILoginFilter
             - name: TokenCheckFilter
         - id: Attendance-service
           uri: lb://Attendance
