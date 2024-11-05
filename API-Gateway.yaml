@@ -42,5 +42,8 @@ spring:
           uri: lb://Attendance
           predicates:
             - Path=/attendance/**
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
 
 
