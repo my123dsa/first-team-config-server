@@ -30,9 +30,9 @@ spring:
           predicates:
             - Path=/user/**
           filters:
-            - name: APILoginFilter  # 첫 번째 필터
-            - name: RefreshTokenFilter        # 두 번째 필터
-            - name: TokenCheckFilter 
+            - name: APILoginFilter
+            - name: RefreshTokenFilter
+            - name: TokenCheckFilter
         - id: Attendance-service
           uri: lb://Attendance
           predicates:
