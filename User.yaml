@@ -17,6 +17,13 @@ spring:
     username: user
     password: 1234 #코딩하는 사람 맞춰서 db 아이디 , 변경, 위 url의 db명 변경하여 사용하기~
     driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
   data:
     redis:
       host: localhost
