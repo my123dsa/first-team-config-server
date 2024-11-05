@@ -24,10 +24,15 @@ spring:
           uri: lb://Finance
           predicates:
             - Path=/finance/**
+          filters:
         - id: User-service
           uri: lb://User
           predicates:
             - Path=/user/**
+          filters:
+            - name: APILoginFilter  # 첫 번째 필터
+            - name: RefreshTokenFilter        # 두 번째 필터
+            - name: TokenCheckFilter 
         - id: Attendance-service
           uri: lb://Attendance
           predicates:
