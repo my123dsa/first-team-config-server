@@ -19,6 +19,8 @@ spring:
         locator:
           enabled: true
           lowerCaseServiceId: true
+          cahe:
+            enabled: false
       routes:
         - id: finance-service
           uri: lb://Finance
