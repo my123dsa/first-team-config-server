@@ -31,7 +31,6 @@ spring:
             - Path=/user/**
           filters:
             - name: APILoginFilter
-            - name: RefreshTokenFilter
             - name: TokenCheckFilter
         - id: Attendance-service
           uri: lb://Attendance
