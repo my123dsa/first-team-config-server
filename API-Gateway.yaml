@@ -29,8 +29,6 @@ spring:
           uri: lb://User
           predicates:
             - Path=/user/login
-          filters:
-            - name: APILoginFilter
         - id: User-service
           uri: lb://User
           predicates:
