@@ -35,6 +35,9 @@ spring:
             - Path=/user/**
           filters:
             - name: TokenCheckFilter
+              args: 
+                header: Authorization
+                grant: Bearer
         - id: Attendance-service
           uri: lb://Attendance
           predicates:
