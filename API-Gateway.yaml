@@ -39,12 +39,7 @@ spring:
           predicates:
             - Path=/user/**
           filters:
-            - name: TokenCheckFilter
-              args: 
-                header: Authorization
-                grant: Bearer
-            - RewritePath=/user/?(?<remaining>.*), /${remaining}
-
+            - TokenCheckFilter
         - id: Attendance-service
           uri: lb://Attendance
           predicates:
