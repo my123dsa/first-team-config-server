@@ -38,6 +38,7 @@ spring:
               args: 
                 header: Authorization
                 grant: Bearer
+            - RewritePath=/user/?(?<remaining>.*), /${remaining}
         - id: Attendance-service
           uri: lb://Attendance
           predicates:
