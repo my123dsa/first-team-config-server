@@ -1,11 +1,13 @@
 server:
   port: 8888
+
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:8761/eureka
+
 spring:
   jmx:
     enabled: false
@@ -19,18 +21,19 @@ spring:
         locator:
           enabled: true
           lowerCaseServiceId: true
-          cahe:
+          cache:   # Fixed typo here
             enabled: false
       routes:
         - id: finance-service
           uri: lb://Finance
           predicates:
             - Path=/finance/**
-          filters:
+          
         - id: user-login-service
           uri: lb://User
           predicates:
             - Path=/user/login
+
         - id: User-service
           uri: lb://User
           predicates:
@@ -41,12 +44,12 @@ spring:
                 header: Authorization
                 grant: Bearer
             - RewritePath=/user/?(?<remaining>.*), /${remaining}
+
         - id: Attendance-service
           uri: lb://Attendance
           predicates:
             - Path=/attendance/**
+
 logging:
   level:
     org.springframework.cloud.gateway: DEBUG
-
-
