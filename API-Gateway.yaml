@@ -33,7 +33,7 @@ spring:
           predicates:
             - Path=/user/**
           filters:
-            - TokenCheckFilter
+            - TokenCheck
         - id: Attendance-service
           uri: lb://Attendance
           predicates:
