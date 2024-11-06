@@ -28,6 +28,11 @@ spring:
           uri: lb://Finance
           predicates:
             - Path=/finance/**
+        - id: user-login-service
+          uri: lb://User
+          predicates:
+            - Path=/user/login
+            
         - id: User-service
           uri: lb://User
           predicates:
