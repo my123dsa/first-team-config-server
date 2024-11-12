@@ -7,18 +7,6 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka
 spring:
-  mail:
-    host: smtp.gmail.com
-    port: 587
-    username: j525252p@gmail.com
-    password: lfyywzrymhinrbug
-    properties:
-      mail:
-        smtp:
-          auth: true # 5
-          timeout: 5000 # 6
-          starttls:
-            enable: true # 7
   application:
     name: User
   cloud:
