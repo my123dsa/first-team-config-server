@@ -20,6 +20,7 @@ spring:
   batch:
     jdbc:
       initialize-schema: always
+      table-prefix: BATCH_
     job:
       enabled: false
   jpa:           # 이 부분이 잘못되었었습니다
