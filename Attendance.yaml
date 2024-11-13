@@ -12,20 +12,16 @@ spring:
   cloud:
     config:
       enabled: false
-  datasource:  # 메인 데이터소스
+  datasource:
     url: jdbc:mysql://localhost:3307/attendance
     username: user
     password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
-  batch:  # 배치 설정
+  batch:
     jdbc:
       initialize-schema: always
+      table-prefix: BATCH_
     job:
       enabled: false
-  batch-datasource:  # 배치 전용 데이터소스 (들여쓰기 수정)
-    url: jdbc:mysql://localhost:3307/batch
-    username: user
-    password: 1234
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  jpa:
+  jpa:           # 이 부분이 잘못되었었습니다
     show-sql: true
