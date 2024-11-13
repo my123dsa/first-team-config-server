@@ -23,5 +23,7 @@ spring:
       table-prefix: BATCH_
     job:
       enabled: false
-  jpa:           # 이 부분이 잘못되었었습니다
+  jpa:
     show-sql: true
+    hibernate:
+      ddl-auto: update    # JPA 테이블 자동 생성
