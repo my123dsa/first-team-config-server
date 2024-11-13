@@ -1,27 +1,36 @@
 server:
-  port: 6060
+ port: 6060
 eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka
+ client:
+   register-with-eureka: true
+   fetch-registry: true
+   service-url:
+     defaultZone: http://localhost:8761/eureka
 spring:
-  application:
-    name: Attendance
-  cloud:
-    config:
-      enabled: false
-  datasource:
-    url: jdbc:mysql://localhost:3307/attendance
-    username: user
-    password: 1234
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  batch:
-    jdbc:
-      initialize-schema: always
-      table-prefix: BATCH_
-    job:
-      enabled: false
-  jpa:           # 이 부분이 잘못되었었습니다
-    show-sql: true
+ application:
+   name: Attendance
+ cloud:
+   config:
+     enabled: false
+ datasource:
+   url: jdbc:mysql://localhost:3307/attendance?createDatabaseIfNotExist=true
+   username: user
+   password: 1234
+   driver-class-name: com.mysql.cj.jdbc.Driver
+ sql:
+   init:
+     mode: always
+ batch:
+   jdbc:
+     initialize-schema: always
+     table-prefix: BATCH_
+   job:
+     enabled: false
+ jpa:
+   show-sql: true
+   defer-datasource-initialization: true
+   hibernate:
+     ddl-auto: update
+   properties:
+     hibernate:
+       format_sql: true
