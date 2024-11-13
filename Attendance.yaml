@@ -22,4 +22,5 @@ spring:
       initialize-schema: always
     job:
       enabled: false
-  jpa: show-sql: true
+  jpa:           # 이 부분이 잘못되었었습니다
+    show-sql: true
