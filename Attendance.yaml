@@ -15,12 +15,11 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3307/attendance
     username: user
-    password: 1234 #코딩하는 사람 맞춰서 db 아이디 , 변경, 위 url의 db명 변경하여 사용하기~
+    password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
   batch:
     jdbc:
-      initialize-schema: always  # Spring Batch 테이블 자동 생성
+      initialize-schema: always
     job:
-      enabled: false  # Job 자동 실행 방지
-  jpa:
-    show-sql: true
+      enabled: false
+  jpa: show-sql: true
