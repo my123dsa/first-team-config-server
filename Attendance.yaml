@@ -1,36 +1,31 @@
 server:
- port: 6060
+  port: 6060
 eureka:
- client:
-   register-with-eureka: true
-   fetch-registry: true
-   service-url:
-     defaultZone: http://localhost:8761/eureka
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
 spring:
- application:
-   name: Attendance
- cloud:
-   config:
-     enabled: false
- datasource:
-   url: jdbc:mysql://localhost:3307/attendance?createDatabaseIfNotExist=true
-   username: user
-   password: 1234
-   driver-class-name: com.mysql.cj.jdbc.Driver
- sql:
-   init:
-     mode: always
- batch:
-   jdbc:
-     initialize-schema: always
-     table-prefix: BATCH_
-   job:
-     enabled: false
- jpa:
-   show-sql: true
-   defer-datasource-initialization: true
-   hibernate:
-     ddl-auto: update
-   properties:
-     hibernate:
-       format_sql: true
+  application:
+    name: Attendance
+  cloud:
+    config:
+      enabled: false
+  datasource:  # 메인 데이터소스
+    url: jdbc:mysql://localhost:3307/attendance
+    username: user
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  batch:  # 배치 설정
+    jdbc:
+      initialize-schema: always
+    job:
+      enabled: false
+  batch-datasource:  # 배치 전용 데이터소스 (들여쓰기 수정)
+    url: jdbc:mysql://localhost:3307/batch
+    username: user
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
