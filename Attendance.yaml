@@ -26,4 +26,4 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update    # JPA 테이블 자동 생성
+      ddl-auto: none    # JPA 테이블 자동 생성
