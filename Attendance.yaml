@@ -13,7 +13,7 @@ spring:
         bucket: fisa_final_project
         project-id: My First Project
         credentials:
-          location: classpath:{}.json
+          location: classpath:${GCP_KEY}.json
         
   application:
     name: Attendance
