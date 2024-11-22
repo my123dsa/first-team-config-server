@@ -11,7 +11,7 @@ spring:
     gcp:
       storage:
         bucket: fisa_final_project
-        project-id: My First Project
+        project-id: woven-coral-441407-d3
         credentials:
           location: classpath:${GCP_KEY}.json
         
