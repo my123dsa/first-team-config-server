@@ -11,6 +11,7 @@ spring:
     name: Attendance
   cloud:
     gcp:
+      enabled: true
       storage:
         bucket: fisa_final_project
         project-id: woven-coral-441407-d3
