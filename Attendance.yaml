@@ -6,17 +6,16 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:8761/eureka
-spring:
+spring: 
+  application:
+    name: Attendance
+  cloud:
     gcp:
       storage:
         bucket: fisa_final_project
         project-id: woven-coral-441407-d3
         credentials:
           location: classpath:${GCP_KEY}.json
-        
-  application:
-    name: Attendance
-  cloud:
     config:
       enabled: false
   datasource:
