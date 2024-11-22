@@ -7,6 +7,14 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka
 spring:
+  cloud:
+    gcp:
+      storage:
+        bucket: fisa_final_project
+        project-id: My First Project
+        credentials:
+          location: classpath:{}.json
+        
   application:
     name: Attendance
   cloud:
