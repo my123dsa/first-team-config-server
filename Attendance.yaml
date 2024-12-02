@@ -15,8 +15,8 @@ spring:
       storage:
         bucket: fisa_final_project
         project-id: woven-coral-441407-d3
-        credentials:
-          location: ${GCP_KEY}
+        # credentials:
+        #   location: ${GCP_KEY}
     config:
       enabled: false
   datasource:
