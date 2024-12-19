@@ -20,7 +20,7 @@ spring:
     config:
       enabled: false
   datasource:
-    url: jdbc:mysql://localhost:3307/attendance
+    url: jdbc:mysql://localhost:3306/attendance
     username: user
     password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
