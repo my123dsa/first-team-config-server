@@ -28,3 +28,8 @@ spring:
     redis:
       host: localhost
       port: 6379
+jwt:
+  jwe:
+    key: ${JWE_KEY}
+  jws:
+    key: ${JWS_KEY}
