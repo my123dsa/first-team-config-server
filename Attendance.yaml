@@ -34,3 +34,5 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: none    # JPA 테이블 자동 생성
+aes:
+  key: ${AES_KEY}
