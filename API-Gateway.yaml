@@ -42,6 +42,6 @@ logging:
     org.springframework.cloud.gateway: DEBUG
 jwt:
   jwe:
-    key: [JWE_KEY]
+    key: ${JWE_KEY}
   jws:
-    key: [JWS_KEY]
+    key: ${JWS_KEY}
