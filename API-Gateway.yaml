@@ -9,8 +9,6 @@ eureka:
       defaultZone: http://localhost:8761/eureka
 
 spring:
-  jmx:
-    enabled: false
   application:
     name: API-Gateway
   cloud:
@@ -18,11 +16,8 @@ spring:
       enabled: false
     gateway:
       discovery:
-        locator:
           enabled: true
           lowerCaseServiceId: true
-          cache:   # Fixed typo here
-            enabled: false
       routes:
         - id: finance-service
           uri: lb://Finance
